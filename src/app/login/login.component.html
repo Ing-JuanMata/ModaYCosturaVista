@@ -1,0 +1,36 @@
+<p-card
+    [style]="{ width: '360px', margin: '5rem auto', 'max-height':'100vh', padding:'1rem' }">
+    <ng-template pTemplate="header">
+        <h1 style="text-align: center;">Inicio de sesi&oacute;n</h1>
+    </ng-template>
+    <form [formGroup]="form">
+        <div>
+            <span class="p-float-label" style="margin-bottom: 5px;">
+                <input pInputText id="phone" formControlName="phone"
+                    pattern="\d{10,15}" />
+                <label for="phone">Tel&eacute;fono</label>
+            </span>
+            <div class="form-error"
+                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['required']">Se
+                requiere un
+                tel&eacute;fono</div>
+            <div class="form-error"
+                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['minlength']">El
+                tel&eacute;fono
+                debe tener por lo menos 10 digitos</div>
+            <div class="form-error"
+                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['maxlength']">El
+                tel&eacute;fono
+                puede tener hasta 15 digitos</div>
+            <div class="form-error"
+                *ngIf="unknownPhone && !form.get('phone')?.errors">El
+                tel&eacute;fono no
+                ha sido registrado</div>
+        </div>
+    </form>
+    <ng-template pTemplate="footer">
+        <p-button label="Iniciar sesión" icon="pi pi-check" severity="success"
+            [disabled]="form.invalid"
+            (onClick)="submit()"></p-button>
+    </ng-template>
+</p-card>

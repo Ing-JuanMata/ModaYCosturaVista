@@ -1,0 +1,42 @@
+<div class="mt-2">
+    <div>
+        <p-toolbar>
+            <div class="p-toolbar-group-start">
+                <button pButton icon="pi pi-plus"></button>
+            </div>
+            <div class="p-toolbar-group-center">
+                <h1 class="text-2xl">Clientes</h1>
+            </div>
+            <div class="p-toolbar-group-end">
+            </div>
+        </p-toolbar>
+    </div>
+    <div class="grid mt-2">
+        <ng-container *ngFor="let client of clients">
+            <p-card [header]="client.phone" class="col-12 md:col-4 xl:col-3">
+                <p class="m-0">
+                    {{client.name}} {{client.lastName}} tiene {{client.jobs ||
+                    0}} {{(client.jobs && client.jobs == 1) ?
+                    "trabajo" : "trabajos"}}
+                </p>
+                <ng-template pTemplate="footer">
+                    <div class="grid">
+                        <p-button label="Editar" severity="secondary"
+                            class="col-5 md:col-12 xl:col-5"
+                            (onClick)="showForm(client)"
+                            styleClass="w-full" />
+                        <p-button label="Trabajos"
+                            class="col-5 md:col-12 xl:col-5"
+                            styleClass="w-full" />
+                        <p-button icon="pi pi-whatsapp"
+                            severity="success"
+                            class="col-2 md:col-12 xl:col-2"
+                            styleClass="w-full"></p-button>
+                    </div>
+                </ng-template>
+            </p-card>
+        </ng-container>
+        <app-modal [client]="client" [visible]="visible"
+            (editClient)="editClient($event)" (visibleEvent)="setVisible($event)"></app-modal>
+    </div>
+</div>

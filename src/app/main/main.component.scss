@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: max-content;
+}
+
+.list a {
+  margin: 10px 0;
+  color: white;
+  &:first-child {
+    margin: 0 0 10px 0;
+  }
+}
+
+.list .active {
+  color: #95e0e8;
+}

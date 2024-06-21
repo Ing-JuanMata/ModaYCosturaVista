@@ -1,0 +1,12 @@
+<p-button severity="success"
+    (onClick)="sidebarVisible = true">
+    <i [style]="{'font-size':'1rem'}" class="pi pi-align-justify"></i>
+</p-button>
+<p-sidebar [(visible)]="sidebarVisible">
+    <h3 class="text-center text-2xl">Moda Y Costura</h3>
+    <nav class="list">
+        <a routerLink="/main/clients" routerLinkActive="active">Clientes</a>
+        <a routerLink="/main/jobs" routerLinkActive="active">Trabajos</a>
+    </nav>
+</p-sidebar>
+<router-outlet />
