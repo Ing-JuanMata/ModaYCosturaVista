@@ -2,7 +2,7 @@
     <div>
         <p-toolbar>
             <div class="p-toolbar-group-start">
-                <button pButton icon="pi pi-plus"></button>
+                <p-button icon="pi pi-plus" (onClick)="addClient()"></p-button>
             </div>
             <div class="p-toolbar-group-center">
                 <h1 class="text-2xl">Clientes</h1>
@@ -30,6 +30,7 @@
                             styleClass="w-full" />
                         <p-button icon="pi pi-whatsapp"
                             severity="success"
+                            (onClick)="sendMessage(client)"
                             class="col-2 md:col-12 xl:col-2"
                             styleClass="w-full"></p-button>
                     </div>

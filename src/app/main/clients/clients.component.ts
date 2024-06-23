@@ -5,6 +5,7 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToolbarModule } from 'primeng/toolbar';
 import { IClient } from '../../interfaces/iclient';
 import { ModalComponent } from './modal/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -21,13 +22,8 @@ import { ModalComponent } from './modal/modal.component';
 })
 export class ClientsComponent {
   public visible = false;
-  public client: IClient = {
-    id: 0,
-    isAdmin: false,
-    lastName: '',
-    name: '',
-    phone: '',
-  };
+  private isNew = false;
+  public client: IClient;
   public clients: Array<IClient> = [
     {
       id: 1,
@@ -62,20 +58,49 @@ export class ClientsComponent {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.client = {
+      id: 0,
+      isAdmin: false,
+      lastName: '',
+      name: '',
+      phone: '',
+    };
+  }
 
   public showForm(client: IClient) {
     this.client = { ...client };
+    this.isNew = false;
+    this.visible = true;
+  }
+
+  public addClient() {
+    this.client = {
+      id: 0,
+      isAdmin: false,
+      lastName: '',
+      name: '',
+      phone: '',
+    };
+    this.isNew = true;
     this.visible = true;
   }
 
   public editClient(client: IClient) {
-    let index = this.clients.findIndex((c) => c.id == client.id);
-    this.clients[index] = { ...client };
+    if (this.isNew) {
+      this.clients.push(client);
+    } else {
+      let index = this.clients.findIndex((c) => c.id == client.id);
+      this.clients[index] = { ...client };
+    }
     this.visible = false;
   }
 
   public setVisible(visible: boolean) {
     this.visible = visible;
+  }
+
+  public sendMessage(client: IClient) {
+    window.open(`//wa.me/${client.phone}`, '_blank');
   }
 }

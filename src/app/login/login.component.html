@@ -11,15 +11,15 @@
                 <label for="phone">Tel&eacute;fono</label>
             </span>
             <div class="form-error"
-                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['required']">Se
+                *ngIf="form.get('phone')!.touched && form.get('phone')!.dirty && form.get('phone')!.errors?.['required']">Se
                 requiere un
                 tel&eacute;fono</div>
             <div class="form-error"
-                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['minlength']">El
+                *ngIf="form.get('phone')!.touched && form.get('phone')!.dirty && form.get('phone')!.errors?.['minlength']">El
                 tel&eacute;fono
                 debe tener por lo menos 10 digitos</div>
             <div class="form-error"
-                *ngIf="form.get('phone')!.dirty && form.get('phone')!.errors?.['maxlength']">El
+                *ngIf="form.get('phone')!.touched && form.get('phone')!.touched && form.get('phone')!.dirty && form.get('phone')!.errors?.['maxlength']">El
                 tel&eacute;fono
                 puede tener hasta 15 digitos</div>
             <div class="form-error"

@@ -1,5 +1,5 @@
 <p-dialog
-    header="Actualizar Cliente"
+    [header]="client.id == 0 ? 'Nuevo Cliente':'Actualizar Cliente'"
     [modal]="true"
     [(visible)]="visible"
     position="bottom"
