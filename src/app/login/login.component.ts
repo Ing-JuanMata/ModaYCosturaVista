@@ -51,17 +51,19 @@ export class LoginComponent {
   }
 
   submit() {
-    this.router.navigate(['main']);
-    return;
     this.unknownPhone = false;
     this.clientService
-      .getClient(this.form.get('phone')!.value)
+      .clientExists(this.form.get('phone')!.value)
       .subscribe((o) => {
-        if (o.data == null) {
+        if (!o.success) {
           this.unknownPhone = true;
           return;
         }
         this.router.navigate(['main']);
       });
+  }
+
+  restartPhone() {
+    this.unknownPhone = false;
   }
 }

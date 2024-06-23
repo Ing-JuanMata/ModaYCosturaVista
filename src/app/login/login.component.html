@@ -7,7 +7,7 @@
         <div>
             <span class="p-float-label" style="margin-bottom: 5px;">
                 <input pInputText id="phone" formControlName="phone"
-                    pattern="\d{10,15}" />
+                    pattern="\d{10,15}" (change)="restartPhone()" />
                 <label for="phone">Tel&eacute;fono</label>
             </span>
             <div class="form-error"

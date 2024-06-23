@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { IClient } from '../interfaces/iclient';
 import { IResponse } from '../interfaces/iresponse';
 
@@ -10,9 +10,29 @@ import { IResponse } from '../interfaces/iresponse';
 export class ClientService {
   constructor(private httpClient: HttpClient) {}
 
-  getClient(phone: string) {
+  clientExists(phone: string) {
     return this.httpClient.get<IResponse<IClient>>(
-      `${environment.api}Client/GetClient/${phone}`
+      `${environment.api}Client/ClientExists/${phone}`
+    );
+  }
+
+  getClients() {
+    return this.httpClient.get<IResponse<IClient[]>>(
+      `${environment.api}Client/GetClients`
+    );
+  }
+
+  postClient(client: IClient) {
+    return this.httpClient.post<IResponse<IClient>>(
+      `${environment.api}Client/PostClient`,
+      client
+    );
+  }
+
+  putClient(client: IClient) {
+    return this.httpClient.put<IResponse<IClient>>(
+      `${environment.api}Client/PutClient`,
+      client
     );
   }
 }

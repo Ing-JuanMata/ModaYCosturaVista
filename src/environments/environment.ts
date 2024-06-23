@@ -1,3 +1,3 @@
 export const environment = {
-  api: 'https://localhost:7061/api/',
+  api: 'http://192.168.1.87/ModaYCostura/Service/api/',
 };

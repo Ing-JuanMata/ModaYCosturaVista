@@ -33,9 +33,7 @@ export class ModalComponent {
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();
 
-  constructor() {
-    console.log(this.visible);
-  }
+  constructor() {}
 
   public editClient() {
     this.editClientEvent.emit(this.client);

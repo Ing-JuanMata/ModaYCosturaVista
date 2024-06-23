@@ -38,6 +38,8 @@
             </p-card>
         </ng-container>
         <app-modal [client]="client" [visible]="visible"
-            (editClient)="editClient($event)" (visibleEvent)="setVisible($event)"></app-modal>
+            (editClient)="editClient($event)"
+            (visibleEvent)="setVisible($event)"></app-modal>
+        <p-toast position="top-right" />
     </div>
 </div>
