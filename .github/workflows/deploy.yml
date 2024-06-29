@@ -1,0 +1,17 @@
+name: deploy
+run-name: deploying view
+on: [push]
+jobs:
+  build-project:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm build
+  deploy-files:
+    runs-on: self-hosted
+    steps:
+      - run: xcopy .\dist\moda-ycostura-view\browser C:\inetput\wwwroot\ModaYCostura\View

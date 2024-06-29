@@ -34,6 +34,10 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "http://192.168.1.87/ModaYCostura/view",
+              "deployUrl": "http://192.168.1.87/ModaYCostura/view",
+              "optimization": true,
+              "verbose": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -93,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
