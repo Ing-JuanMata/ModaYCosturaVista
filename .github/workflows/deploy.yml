@@ -3,7 +3,7 @@ run-name: deploying view
 on: [push]
 jobs:
   build-project:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
