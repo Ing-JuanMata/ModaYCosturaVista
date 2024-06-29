@@ -12,6 +12,7 @@ jobs:
       - run: npm ci
       - run: npm build
   deploy-files:
+    needs: build-project
     runs-on: self-hosted
     steps:
       - run: xcopy .\dist\moda-ycostura-view\browser C:\inetput\wwwroot\ModaYCostura\View
