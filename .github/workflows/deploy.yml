@@ -1,6 +1,10 @@
 name: deploy
 run-name: deploying view
-on: [push]
+on:
+  merge_group:
+    branches:
+      - main
+
 jobs:
   build-project:
     runs-on: self-hosted

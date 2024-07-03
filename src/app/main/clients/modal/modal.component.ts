@@ -27,6 +27,7 @@ export class ModalComponent {
     lastName: '',
     name: '',
     phone: '',
+    jobs:[]
   };
   @Output('editClient') editClientEvent: EventEmitter<IClient> =
     new EventEmitter();
