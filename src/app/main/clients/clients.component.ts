@@ -40,6 +40,7 @@ export class ClientsComponent implements OnInit {
       lastName: '',
       name: '',
       phone: '',
+      jobs: [],
     };
   }
 
@@ -49,7 +50,10 @@ export class ClientsComponent implements OnInit {
 
   private getClients() {
     this.clientService.getClients().subscribe({
-      next: (data) => (this.clients = data.data),
+      next: (data) => {
+        this.clients = data.data;
+        this.clients.forEach((c) => console.log(c.jobs.length));
+      },
       error: (e) => console.error(e),
     });
   }
@@ -67,6 +71,7 @@ export class ClientsComponent implements OnInit {
       lastName: '',
       name: '',
       phone: '',
+      jobs: [],
     };
     this.isNew = true;
     this.visible = true;
