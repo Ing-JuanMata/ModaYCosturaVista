@@ -1,7 +1,7 @@
 name: deploy
 run-name: deploying view
 on:
-  push:
+  merge_group:
     branches:
       - main
 
