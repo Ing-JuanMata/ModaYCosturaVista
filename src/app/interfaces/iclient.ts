@@ -6,5 +6,5 @@ export interface IClient {
   lastName: string;
   phone: string;
   isAdmin: boolean;
-  jobs: IJob[];
+  jobs?: number;
 }
