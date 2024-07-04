@@ -12,26 +12,26 @@ export class ClientService {
 
   clientExists(phone: string) {
     return this.httpClient.get<IResponse<IClient>>(
-      `${environment.api}Client/ClientExists/${phone}`
+      `${environment.api}Client/Exists/${phone}`
     );
   }
 
   getClients() {
     return this.httpClient.get<IResponse<IClient[]>>(
-      `${environment.api}Client/GetClients`
+      `${environment.api}Client/GetAll`
     );
   }
 
   postClient(client: IClient) {
     return this.httpClient.post<IResponse<IClient>>(
-      `${environment.api}Client/PostClient`,
+      `${environment.api}Client/Add`,
       client
     );
   }
 
   putClient(client: IClient) {
     return this.httpClient.put<IResponse<IClient>>(
-      `${environment.api}Client/PutClient`,
+      `${environment.api}Client/Update`,
       client
     );
   }
