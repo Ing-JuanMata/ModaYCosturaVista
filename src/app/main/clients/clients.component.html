@@ -15,8 +15,8 @@
         <ng-container *ngFor="let client of clients">
             <p-card [header]="client.phone" class="col-12 md:col-4 xl:col-3">
                 <p class="m-0">
-                    {{client.name}} {{client.lastName}} tiene {{client.jobs.length ||
-                    0}} {{(client.jobs && client.jobs.length == 1) ?
+                    {{client.name}} {{client.lastName}} tiene {{client.jobs ||
+                    0}} {{(client.jobs && client.jobs == 1) ?
                     "trabajo" : "trabajos"}}
                 </p>
                 <ng-template pTemplate="footer">

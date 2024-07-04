@@ -1,9 +1,10 @@
 name: deploy
 run-name: deploying view
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches: [main]
 
 jobs:
   build-project:
