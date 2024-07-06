@@ -3,7 +3,7 @@ import { ILocalization } from './ilocalization';
 import { IMaterial } from './imaterial';
 import { IProperty } from './iproperty';
 import { IStatus } from './istatus';
-import { IType } from './iType';
+import { IType } from './itype';
 
 export interface IJob {
   id: number;

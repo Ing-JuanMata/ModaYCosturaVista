@@ -1,5 +1,3 @@
-import { IJob } from './ijob';
-
 export interface IClient {
   id: number;
   name: string;
