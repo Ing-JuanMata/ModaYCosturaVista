@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-project:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,3 +16,9 @@ jobs:
           node-version: lts/iron
       - run: npm ci
       - run: npm run build
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: dist/browser
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
