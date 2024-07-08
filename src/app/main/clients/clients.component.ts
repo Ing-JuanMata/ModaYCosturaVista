@@ -8,6 +8,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { IClient } from '../../interfaces/iclient';
 import { ClientService } from '../../services/client.service';
 import { ModalComponent } from './modal/modal.component';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-clients',
@@ -19,6 +20,7 @@ import { ModalComponent } from './modal/modal.component';
     CommonModule,
     ModalComponent,
     ToastModule,
+    HeaderComponent
   ],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss',
