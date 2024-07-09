@@ -7,8 +7,8 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { IClient } from '../../interfaces/iclient';
 import { ClientService } from '../../services/client.service';
+import { HeaderComponent } from '../../utils/header/header.component';
 import { ModalComponent } from './modal/modal.component';
-import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-clients',
@@ -20,7 +20,7 @@ import { HeaderComponent } from '../../header/header.component';
     CommonModule,
     ModalComponent,
     ToastModule,
-    HeaderComponent
+    HeaderComponent,
   ],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss',
