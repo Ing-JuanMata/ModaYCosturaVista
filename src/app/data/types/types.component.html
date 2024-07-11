@@ -1,1 +1,19 @@
-<app-header (action)="{}" title="Tipos" />
+<app-header (action)="addType()" title="Tipos" />
+<div class="grid mt-2">
+    <ng-container *ngFor="let type of types">
+        <p-card [header]="type.name" class="col-12 md:col-4 xl:col-3">
+            <ng-template pTemplate="footer">
+                <div class="grid">
+                    <p-button label="Editar"
+                        class="col-5 md:col-12 xl:col-5"
+                        (onClick)="showForm(type)"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </ng-container>
+    <app-modal [type]="type" [visible]="visible"
+        (editType)="editType($event)"
+        (visibleEvent)="setVisible($event)"></app-modal>
+    <p-toast position="top-right" />
+</div>

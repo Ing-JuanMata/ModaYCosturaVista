@@ -16,17 +16,17 @@ export class UnitService {
     );
   }
 
-  postUnit(material: IUnit) {
+  postUnit(unit: IUnit) {
     return this.httpClient.post<IResponse<IUnit>>(
       `${environment.api}Unit/Add`,
-      material
+      unit
     );
   }
 
-  putUnit(material: IUnit) {
+  putUnit(unit: IUnit) {
     return this.httpClient.put<IResponse<IUnit>>(
       `${environment.api}Unit/Update`,
-      material
+      unit
     );
   }
 }

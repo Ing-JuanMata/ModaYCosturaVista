@@ -58,9 +58,9 @@ export class UnitsComponent {
     this.visible = true;
   }
 
-  public editUnit(material: IUnit) {
+  public editUnit(unit: IUnit) {
     if (this.isNew) {
-      this.unitService.postUnit(material).subscribe({
+      this.unitService.postUnit(unit).subscribe({
         next: (r) => {
           if (r.success) {
             this.units.push(r.data);
@@ -80,11 +80,11 @@ export class UnitsComponent {
         error: (e) => console.error(e),
       });
     } else {
-      this.unitService.putUnit(material).subscribe({
+      this.unitService.putUnit(unit).subscribe({
         next: (r) => {
           if (r.success) {
-            let index = this.units.findIndex((c) => c.id == material.id);
-            this.units[index] = { ...material };
+            let index = this.units.findIndex((c) => c.id == unit.id);
+            this.units[index] = { ...unit };
             this.visible = false;
             this.messageService.add({
               severity: 'success',
