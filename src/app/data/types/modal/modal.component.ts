@@ -4,7 +4,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { SplitButtonModule } from 'primeng/splitbutton';
-import { IType } from '../../../interfaces/iType';
+import { IType } from '../../../interfaces/itype';
 
 @Component({
   selector: 'app-modal',
