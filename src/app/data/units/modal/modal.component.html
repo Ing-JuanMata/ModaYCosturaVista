@@ -1,0 +1,28 @@
+<p-dialog
+    [header]="unit.id == 0 ? 'Nueva Unidad':'Actualizar Unidad'"
+    [modal]="true"
+    [(visible)]="visible"
+    position="bottom"
+    (onHide)="setHidden()"
+    [style]="{ width: '25rem' }">
+    <div class="flex align-items-center gap-3 mb-3">
+        <label for="name" class="font-semibold w-6rem">
+            Nombre
+        </label>
+        <input pInputText id="name" class="flex-auto"
+            [(ngModel)]="unit.name"
+            autocomplete="name" />
+    </div>
+    <div class="flex align-items-center gap-3 mb-3">
+        <label for="name" class="font-semibold w-6rem">
+            Abreviaci&oacute;n
+        </label>
+        <input pInputText id="shortName" class="flex-auto"
+            [(ngModel)]="unit.shortName" />
+    </div>
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Cancelar" severity="secondary"
+            (click)="setHidden()" />
+        <p-button label="Guardar" (click)="editUnit()" />
+    </div>
+</p-dialog>

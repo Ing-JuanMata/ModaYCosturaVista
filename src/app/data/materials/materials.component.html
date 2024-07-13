@@ -1,0 +1,19 @@
+<app-header (action)="addMaterial()" title="Materiales" />
+<div class="grid mt-2">
+    <ng-container *ngFor="let material of materials">
+        <p-card [header]="material.name" class="col-12 md:col-4 xl:col-3">
+            <p>Unidad: {{material.unit.name}}({{material.unit.shortName}})</p>
+            <ng-template pTemplate="footer">
+                <div class="grid">
+                    <p-button label="Editar"
+                        class="col-5 md:col-12 xl:col-5"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </ng-container>
+    <app-modal [material]="material" [visible]="visible"
+        (editMaterial)="editMaterial($event)"
+        (visibleEvent)="setVisible($event)"></app-modal>
+    <p-toast position="top-right" />
+</div>

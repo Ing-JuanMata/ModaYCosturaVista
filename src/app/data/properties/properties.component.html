@@ -1,0 +1,19 @@
+<app-header (action)="addProperty()" title="Propiedades" />
+<div class="grid mt-2">
+    <ng-container *ngFor="let property of properties">
+        <p-card [header]="property.name" class="col-12 md:col-4 xl:col-3">
+            <ng-template pTemplate="footer">
+                <div class="grid">
+                    <p-button label="Editar"
+                        class="col-5 md:col-12 xl:col-5"
+                        (onClick)="showForm(property)"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </ng-container>
+    <app-modal [property]="property" [visible]="visible"
+        (editProperty)="editProperty($event)"
+        (visibleEvent)="setVisible($event)"></app-modal>
+    <p-toast position="top-right" />
+</div>

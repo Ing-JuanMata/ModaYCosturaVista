@@ -1,22 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { SidebarModule } from 'primeng/sidebar';
+import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from '../utils/menu/menu.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    SidebarModule,
-    ButtonModule,
-    CommonModule,
-    RouterModule,
-  ],
+  imports: [RouterOutlet, MenuComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent {
-  sidebarVisible = false;
-}
+export class MainComponent {}

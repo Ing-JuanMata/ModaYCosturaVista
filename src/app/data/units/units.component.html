@@ -1,0 +1,22 @@
+<app-header (action)="addUnit()" title="Unidades" />
+<div class="grid mt-2">
+    <ng-container *ngFor="let unit of units">
+        <p-card [header]="unit.name" class="col-12 md:col-4 xl:col-3">
+            <p class="m-0">
+                Abreviaci&oacute;n: <strong>{{unit.shortName}}</strong>
+            </p>
+            <ng-template pTemplate="footer">
+                <div class="grid">
+                    <p-button label="Editar"
+                        class="col-5 md:col-12 xl:col-5"
+                        (onClick)="showForm(unit)"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </ng-container>
+    <app-modal [unit]="unit" [visible]="visible"
+        (editUnit)="editUnit($event)"
+        (visibleEvent)="setVisible($event)"></app-modal>
+    <p-toast position="top-right" />
+</div>

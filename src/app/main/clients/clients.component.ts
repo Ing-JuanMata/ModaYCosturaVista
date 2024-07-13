@@ -7,6 +7,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { IClient } from '../../interfaces/iclient';
 import { ClientService } from '../../services/client.service';
+import { HeaderComponent } from '../../utils/header/header.component';
 import { ModalComponent } from './modal/modal.component';
 
 @Component({
@@ -19,6 +20,7 @@ import { ModalComponent } from './modal/modal.component';
     CommonModule,
     ModalComponent,
     ToastModule,
+    HeaderComponent,
   ],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss',

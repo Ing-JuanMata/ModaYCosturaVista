@@ -1,0 +1,19 @@
+<app-header (action)="addLocalization()" title="Locaciones" />
+<div class="grid mt-2">
+    <ng-container *ngFor="let localization of localizations">
+        <p-card [header]="localization.name" class="col-12 md:col-4 xl:col-3">
+            <ng-template pTemplate="footer">
+                <div class="grid">
+                    <p-button label="Editar"
+                        class="col-5 md:col-12 xl:col-5"
+                        (onClick)="showForm(localization)"
+                        styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </ng-container>
+    <app-modal [localization]="localization" [visible]="visible"
+        (editLocalization)="editLocalization($event)"
+        (visibleEvent)="setVisible($event)"></app-modal>
+    <p-toast position="top-right" />
+</div>

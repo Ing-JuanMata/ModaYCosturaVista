@@ -1,0 +1,21 @@
+<p-dialog
+    [header]="localization.id == 0 ? 'Nueva Locación':'Actualizar Locación'"
+    [modal]="true"
+    [(visible)]="visible"
+    position="bottom"
+    (onHide)="setHidden()"
+    [style]="{ width: '25rem' }">
+    <div class="flex align-items-center gap-3 mb-3">
+        <label for="name" class="font-semibold w-6rem">
+            Nombre
+        </label>
+        <input pInputText id="name" class="flex-auto"
+            [(ngModel)]="localization.name"
+            autocomplete="name" />
+    </div>
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Cancelar" severity="secondary"
+            (click)="setHidden()" />
+        <p-button label="Guardar" (click)="editLocalization()" />
+    </div>
+</p-dialog>
