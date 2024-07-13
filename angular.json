@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/moda-ycostura-view",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -34,8 +34,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "http://192.168.1.1/ModaYCostura/view",
-              "deployUrl": "http://192.168.1.1/ModaYCostura/view",
+              "baseHref": "/ModaYCosturaVista/",
               "optimization": true,
               "verbose": true,
               "outputHashing": "all"

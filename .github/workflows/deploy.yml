@@ -1,6 +1,7 @@
 name: deploy
 run-name: deploying view
 on:
+  push: 
   workflow_dispatch:
   pull_request:
     types: [closed]
@@ -16,3 +17,11 @@ jobs:
           node-version: lts/iron
       - run: npm ci
       - run: npm run build
+      - name: move index to 404
+        run: mv dist/browser/index.html dist/browser/404.html
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: dist/browser
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
