@@ -50,6 +50,12 @@ export class MenuComponent implements OnInit {
             command: () => (this.sidebarVisible = false),
           },
           {
+            label: 'Locaciones',
+            routerLink: '/data/localization',
+            icon: PrimeIcons.MAP_MARKER,
+            command: () => (this.sidebarVisible = false),
+          },
+          {
             label: 'Propiedades',
             routerLink: '/data/properties',
             icon: PrimeIcons.BOOK,

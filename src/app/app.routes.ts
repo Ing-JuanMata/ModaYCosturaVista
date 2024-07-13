@@ -8,6 +8,7 @@ import { PropertiesComponent } from './data/properties/properties.component';
 import { StatesComponent } from './data/states/states.component';
 import { TypesComponent } from './data/types/types.component';
 import { UnitsComponent } from './data/units/units.component';
+import { LocalizationComponent } from './data/localization/localization.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'materials', pathMatch: 'full' },
       { path: 'materials', component: MaterialsComponent },
+      { path: 'localization', component: LocalizationComponent },
       { path: 'properties', component: PropertiesComponent },
       { path: 'states', component: StatesComponent },
       { path: 'types', component: TypesComponent },

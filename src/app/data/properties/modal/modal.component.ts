@@ -4,7 +4,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { SplitButtonModule } from 'primeng/splitbutton';
-import { IStatus } from '../../../interfaces/istatus';
+import { IProperty } from '../../../interfaces/iproperty';
 
 @Component({
   selector: 'app-modal',
@@ -21,15 +21,16 @@ import { IStatus } from '../../../interfaces/istatus';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) state: IStatus = { id: 0, name: '' };
-  @Output('editStatus') editStatusEvent: EventEmitter<IStatus> = new EventEmitter();
+  @Input({ required: true }) property: IProperty = { id: 0, name: '' };
+  @Output('editProperty') editPropertyEvent: EventEmitter<IProperty> =
+    new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();
 
   constructor() {}
 
-  public editStatus() {
-    this.editStatusEvent.emit(this.state);
+  public editProperty() {
+    this.editPropertyEvent.emit(this.property);
   }
 
   public setHidden() {

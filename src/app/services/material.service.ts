@@ -12,7 +12,7 @@ export class MaterialService {
   constructor(private httpClient: HttpClient) {}
 
   getMaterials() {
-    return this.httpClient.get<IResponse<IClient[]>>(
+    return this.httpClient.get<IResponse<IMaterial[]>>(
       `${environment.api}Material/GetAll`
     );
   }

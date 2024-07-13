@@ -1,5 +1,5 @@
 <p-dialog
-    [header]="material.id == 0 ? 'Nuevo Material':'Actualizar Material'"
+    [header]="property.id == 0 ? 'Nueva Propiedad':'Actualizar Propiedad'"
     [modal]="true"
     [(visible)]="visible"
     position="bottom"
@@ -10,20 +10,12 @@
             Nombre
         </label>
         <input pInputText id="name" class="flex-auto"
-            [(ngModel)]="material.name"
+            [(ngModel)]="property.name"
             autocomplete="name" />
-    </div>
-    <div class="flex align-items-center gap-3 mb-3">
-        <label for="name" class="font-semibold w-6rem">
-            Unidad
-        </label>
-        <p-dropdown id="unit" class="flex-auto"
-            [(ngModel)]="material.unit" [options]="units" optionLabel="name"
-            placeholder="Selecciona una unidad" />
     </div>
     <div class="flex justify-content-end gap-2">
         <p-button label="Cancelar" severity="secondary"
             (click)="setHidden()" />
-        <p-button label="Guardar" (click)="editMaterial()" />
+        <p-button label="Guardar" (click)="editProperty()" />
     </div>
 </p-dialog>

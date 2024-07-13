@@ -27,7 +27,11 @@ import { CommonModule } from '@angular/common';
 export class MaterialsComponent implements OnInit {
   public visible = false;
   private isNew = false;
-  public material: IMaterial = { id: 0, name: '' };
+  public material: IMaterial = {
+    id: 0,
+    name: '',
+    unit: { id: 0, name: '', shortName: '' },
+  };
   public materials: Array<IMaterial> = [];
 
   constructor(
@@ -53,7 +57,11 @@ export class MaterialsComponent implements OnInit {
   }
 
   public addMaterial() {
-    this.material = { id: 0, name: '' };
+    this.material = {
+      id: 0,
+      name: '',
+      unit: { id: 0, name: '', shortName: '' },
+    };
     this.isNew = true;
     this.visible = true;
   }
