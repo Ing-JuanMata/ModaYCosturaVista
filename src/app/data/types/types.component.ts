@@ -4,7 +4,7 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
-import { IType } from '../../interfaces/iType';
+import { IType } from '../../interfaces/itype';
 import { TypeService } from '../../services/type.service';
 import { HeaderComponent } from '../../utils/header/header.component';
 import { ModalComponent } from './modal/modal.component';

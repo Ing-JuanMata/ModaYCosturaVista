@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { IResponse } from '../interfaces/iresponse';
-import { IType } from '../interfaces/iType';
+import { IType } from '../interfaces/itype';
 
 @Injectable({
   providedIn: 'root'
