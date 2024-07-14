@@ -21,7 +21,13 @@ import { IUnit } from '../../../interfaces/iunits';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) unit: IUnit = { id: 0, name: '', shortName: '' };
+  @Input({ required: true }) unit: IUnit = {
+    id: 0,
+    name: '',
+    shortName: '',
+    isActive: true,
+    lastUpdate: new Date().toUTCString(),
+  };
   @Output('editUnit') editUnitEvent: EventEmitter<IUnit> = new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();

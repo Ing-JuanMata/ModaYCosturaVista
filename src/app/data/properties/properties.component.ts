@@ -27,7 +27,12 @@ import { ModalComponent } from './modal/modal.component';
 export class PropertiesComponent {
   visible = false;
   isNew = false;
-  property: IProperty = { id: 0, name: '' };
+  property: IProperty = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   properties: IProperty[] = [];
 
   constructor(
@@ -53,7 +58,12 @@ export class PropertiesComponent {
   }
 
   public addProperty() {
-    this.property = { id: 0, name: '' };
+    this.property = {
+      id: 0,
+      name: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    };
     this.isNew = true;
     this.visible = true;
   }

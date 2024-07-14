@@ -27,7 +27,12 @@ import { StatusService } from '../../services/status.service';
 export class StatesComponent {
   visible = false;
   isNew = false;
-  state: IStatus = { id: 0, name: '' };
+  state: IStatus = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   states: IStatus[] = [];
 
   constructor(
@@ -53,7 +58,12 @@ export class StatesComponent {
   }
 
   public addStatus() {
-    this.state = { id: 0, name: '' };
+    this.state = {
+      id: 0,
+      name: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    };
     this.isNew = true;
     this.visible = true;
   }

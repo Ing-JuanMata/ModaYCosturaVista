@@ -18,7 +18,7 @@ import { UnitService } from '../../../services/unit.service';
     InputMaskModule,
     FormsModule,
     SplitButtonModule,
-    DropdownModule
+    DropdownModule,
   ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
@@ -28,7 +28,15 @@ export class ModalComponent implements OnInit {
   @Input({ required: true }) material: IMaterial = {
     id: 0,
     name: '',
-    unit: { id: 0, name: '', shortName: '' },
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+    unit: {
+      id: 0,
+      name: '',
+      shortName: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    },
   };
   @Output('editMaterial') editMaterialEvent: EventEmitter<IMaterial> =
     new EventEmitter();

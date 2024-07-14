@@ -10,11 +10,12 @@ export interface IJob {
   name: string;
   price: number;
   requestDate: Date;
-  lastUpdate: Date;
+  lastUpdate: string;
+  isActive: boolean;
   client: IClient;
-  type:IType;
-  status:IStatus;
-  localization:ILocalization;
+  type: IType;
+  status: IStatus;
+  localization: ILocalization;
   properties: IProperty[];
-  materials:IMaterial[];
+  materials: IMaterial[];
 }

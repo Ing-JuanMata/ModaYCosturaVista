@@ -27,7 +27,12 @@ import { ModalComponent } from './modal/modal.component';
 export class TypesComponent {
   visible = false;
   isNew = false;
-  type: IType = { id: 0, name: '' };
+  type: IType = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   types: IType[] = [];
 
   constructor(
@@ -53,7 +58,12 @@ export class TypesComponent {
   }
 
   public addType() {
-    this.type = { id: 0, name: '' };
+    this.type = {
+      id: 0,
+      name: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    };
     this.isNew = true;
     this.visible = true;
   }

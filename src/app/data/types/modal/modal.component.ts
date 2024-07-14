@@ -21,7 +21,12 @@ import { IType } from '../../../interfaces/itype';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) type: IType = { id: 0, name: '' };
+  @Input({ required: true }) type: IType = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   @Output('editType') editTypeEvent: EventEmitter<IType> = new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();

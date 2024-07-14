@@ -22,7 +22,12 @@ import { ILocalization } from '../../../interfaces/ilocalization';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) localization: ILocalization = { id: 0, name: '' };
+  @Input({ required: true }) localization: ILocalization = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   @Output('editLocalization') editLocalizationEvent: EventEmitter<ILocalization> = new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();

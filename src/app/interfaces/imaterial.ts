@@ -1,7 +1,9 @@
-import { IUnit } from "./iunits";
+import { IUnit } from './iunits';
 
-export interface IMaterial{
-    id: number;
-    name: string;
-    unit: IUnit
+export interface IMaterial {
+  id: number;
+  name: string;
+  unit: IUnit;
+  lastUpdate: string;
+  isActive: boolean;
 }

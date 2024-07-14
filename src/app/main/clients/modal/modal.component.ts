@@ -26,7 +26,9 @@ export class ModalComponent {
     isAdmin: false,
     lastName: '',
     name: '',
-    phone: ''
+    phone: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
   };
   @Output('editClient') editClientEvent: EventEmitter<IClient> =
     new EventEmitter();

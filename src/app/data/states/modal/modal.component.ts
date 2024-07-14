@@ -21,7 +21,12 @@ import { IStatus } from '../../../interfaces/istatus';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) state: IStatus = { id: 0, name: '' };
+  @Input({ required: true }) state: IStatus = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   @Output('editStatus') editStatusEvent: EventEmitter<IStatus> = new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =
     new EventEmitter();

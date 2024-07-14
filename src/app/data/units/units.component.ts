@@ -27,7 +27,13 @@ import { CommonModule } from '@angular/common';
 export class UnitsComponent {
   visible = false;
   isNew = false;
-  unit: IUnit = { id: 0, name: '', shortName: '' };
+  unit: IUnit = {
+    id: 0,
+    name: '',
+    shortName: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   units: IUnit[] = [];
 
   constructor(
@@ -53,7 +59,13 @@ export class UnitsComponent {
   }
 
   public addUnit() {
-    this.unit = { id: 0, name: '', shortName: '' };
+    this.unit = {
+      id: 0,
+      name: '',
+      shortName: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    };
     this.isNew = true;
     this.visible = true;
   }

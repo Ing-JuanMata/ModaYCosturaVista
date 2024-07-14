@@ -4,5 +4,7 @@ export interface IClient {
   lastName: string;
   phone: string;
   isAdmin: boolean;
+  lastUpdate: string;
+  isActive: boolean;
   jobs?: number;
 }

@@ -21,7 +21,12 @@ import { IProperty } from '../../../interfaces/iproperty';
 })
 export class ModalComponent {
   @Input() visible = false;
-  @Input({ required: true }) property: IProperty = { id: 0, name: '' };
+  @Input({ required: true }) property: IProperty = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   @Output('editProperty') editPropertyEvent: EventEmitter<IProperty> =
     new EventEmitter();
   @Output('visibleEvent') visibleEvent: EventEmitter<boolean> =

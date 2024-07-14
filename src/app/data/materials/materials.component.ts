@@ -30,7 +30,15 @@ export class MaterialsComponent implements OnInit {
   public material: IMaterial = {
     id: 0,
     name: '',
-    unit: { id: 0, name: '', shortName: '' },
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+    unit: {
+      id: 0,
+      name: '',
+      shortName: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    },
   };
   public materials: Array<IMaterial> = [];
 
@@ -60,7 +68,15 @@ export class MaterialsComponent implements OnInit {
     this.material = {
       id: 0,
       name: '',
-      unit: { id: 0, name: '', shortName: '' },
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+      unit: {
+        id: 0,
+        name: '',
+        shortName: '',
+        isActive: true,
+        lastUpdate: new Date().toISOString(),
+      },
     };
     this.isNew = true;
     this.visible = true;

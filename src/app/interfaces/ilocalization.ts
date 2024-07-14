@@ -1,4 +1,6 @@
-export interface ILocalization{
-    id: number;
-    name: string;
+export interface ILocalization {
+  id: number;
+  name: string;
+  lastUpdate: string;
+  isActive: boolean;
 }

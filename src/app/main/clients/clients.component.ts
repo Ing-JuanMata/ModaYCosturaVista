@@ -42,6 +42,8 @@ export class ClientsComponent implements OnInit {
       lastName: '',
       name: '',
       phone: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
     };
   }
 
@@ -69,6 +71,8 @@ export class ClientsComponent implements OnInit {
       lastName: '',
       name: '',
       phone: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
     };
     this.isNew = true;
     this.visible = true;

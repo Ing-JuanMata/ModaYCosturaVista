@@ -27,7 +27,12 @@ import { LocalizationService } from '../../services/localization.service';
 export class LocalizationComponent implements OnInit {
   visible = false;
   isNew = false;
-  localization: ILocalization = { id: 0, name: '' };
+  localization: ILocalization = {
+    id: 0,
+    name: '',
+    isActive: true,
+    lastUpdate: new Date().toISOString(),
+  };
   localizations: ILocalization[] = [];
 
   constructor(
@@ -53,7 +58,12 @@ export class LocalizationComponent implements OnInit {
   }
 
   public addLocalization() {
-    this.localization = { id: 0, name: '' };
+    this.localization = {
+      id: 0,
+      name: '',
+      isActive: true,
+      lastUpdate: new Date().toISOString(),
+    };
     this.isNew = true;
     this.visible = true;
   }
